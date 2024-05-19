@@ -26,7 +26,7 @@ function HomePage({ blogs }) {
 }
 
 export async function getStaticProps() {
-  const res = await fetch('https://dev.to/api/articles?username=said7388');
+  const res = await fetch('https://dev.to/api/articles?username=lawrenceegr');
   const data = await res.json();
   const filteredBlogs = data.sort(() => Math.random() - 0.5);
 

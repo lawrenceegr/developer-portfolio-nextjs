@@ -1,9 +1,9 @@
 export const socialsData = {
-    github: 'https://github.com/said7388',
-    facebook: 'https://www.facebook.com/abusaid.riyaz/',
-    linkedIn: 'https://www.linkedin.com/in/abu-said-bd/',
-    twitter: 'https://twitter.com/said7388',
-    medium: 'https://medium.com/@abusaid-bd',
-    stackOverflow: 'https://stackoverflow.com/users/16840768/abu-said',
-    mail: 'abusaid7388@gmail.com',
+    github: 'https://github.com/lawrenceegr',
+    facebook: 'https://web.facebook.com/lawrence.kipyegonlangat',
+    linkedIn: 'https://www.linkedin.com/in/lawrence-k-langat/',
+    x: 'https://x.com/webgeek254',
+    medium: 'https://medium.com/@lawrencelangat',
+    stackOverflow: 'https://stackoverflow.com/users/18024453/boltech',
+    mail: 'lawrencelangatmi@gmail.com',
 }

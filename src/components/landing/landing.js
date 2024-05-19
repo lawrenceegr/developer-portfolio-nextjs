@@ -3,9 +3,9 @@ import React, { useContext } from 'react';
 import {
     FaFacebook,
     FaGithub,
-    FaLinkedin,
-    FaTwitter
+    FaLinkedin
 } from 'react-icons/fa';
+import { FaSquareXTwitter } from "react-icons/fa6";
 import Typed from 'react-typed';
 import { ThemeContext } from '../../contexts/theme-context';
 import { headerData } from '../../data/header-data';
@@ -52,13 +52,13 @@ function Landing() {
                                 />
                             </a>
                         )}
-                        {socialsData.twitter && (
+                        {socialsData.x && (
                             <a
-                                href={socialsData.twitter}
+                                href={socialsData.x}
                                 target='_blank'
                                 rel='noreferrer'
                             >
-                                <FaTwitter
+                                <FaSquareXTwitter
                                     className={styles.landingSocial}
                                     style={{ color: theme.primary }}
                                     aria-label='Twitter'

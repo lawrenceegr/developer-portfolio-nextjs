@@ -2,12 +2,13 @@ import emailjs from '@emailjs/browser';
 import { IconButton, Snackbar, SnackbarContent } from '@material-ui/core';
 import CloseIcon from '@material-ui/icons/Close';
 import Image from 'next/image';
-import React, { useContext, useRef, useState } from 'react';
+import React, { useContext, useRef, useState, useEffect } from 'react';
 import { AiOutlineCheckCircle, AiOutlineSend } from 'react-icons/ai';
 import {
     FaFacebook, FaGithub, FaLinkedinIn, FaMediumM,
-    FaStackOverflow, FaTwitter
+    FaStackOverflow
 } from 'react-icons/fa';
+import { FaSquareXTwitter } from "react-icons/fa6";
 import { FiAtSign, FiPhone } from 'react-icons/fi';
 import { HiOutlineLocationMarker } from 'react-icons/hi';
 import isEmail from 'validator/lib/isEmail';
@@ -26,6 +27,11 @@ function Contacts() {
     const form = useRef();
     const { theme } = useContext(ThemeContext);
 
+    useEffect(() => {
+        // Initialize EmailJS with the public key
+        emailjs.init(process.env.NEXT_PUBLIC_PUBLIC_KEY);
+    }, []);
+
     const handleClose = (event, reason) => {
         if (reason === 'clickaway') {
             return;
@@ -39,10 +45,10 @@ function Contacts() {
         if (name && email && message) {
             if (isEmail(email)) {
                 emailjs.sendForm(
-                    process.env.REACT_APP_YOUR_SERVICE_ID,
-                    process.env.REACT_APP_YOUR_TEMPLATE_ID,
-                    form.current, process.env.REACT_APP_YOUR_PUBLIC_KEY)
-                    .then((result) => {
+                    process.env.NEXT_PUBLIC_SERVICE_ID,
+                    process.env.NEXT_PUBLIC_TEMPLATE_ID,
+                    form.current
+                ).then((result) => {
                         console.log('success');
                         setSuccess(true);
                         setErrMsg('');
@@ -253,9 +259,9 @@ function Contacts() {
                         </div>
 
                         <div className={styles.socialmediaIcons}>
-                            {socialsData.twitter && (
+                            {socialsData.x && (
                                 <a
-                                    href={socialsData.twitter}
+                                    href={socialsData.x}
                                     target='_blank'
                                     rel='noreferrer'
                                     className="w-[45px] h-[45px] 
@@ -264,7 +270,7 @@ function Contacts() {
                                      ease-in-out text-[#15202B] bg-[#8B98A5]
                                       hover:bg-[#1D9BF0]"
                                 >
-                                    <FaTwitter aria-label='Twitter' />
+                                    <FaSquareXTwitter aria-label='Twitter' />
                                 </a>
                             )}
                             {socialsData.github && (
