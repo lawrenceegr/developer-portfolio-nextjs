@@ -117,7 +117,7 @@ function Landing() {
                         <div className={styles.lcrButtonContainer}>
                             {headerData.resumePdf && (
                                 <a
-                                    href={headerData.resumePdf}
+                                    href="{headerData.resumePdf}"
                                     download='resume'
                                     target='_blank'
                                     rel='noreferrer'
